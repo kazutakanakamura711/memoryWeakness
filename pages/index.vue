@@ -21,6 +21,10 @@
       class="record"
     />
   </div>
+  <Title
+    :title="title"
+    class="title"
+  />
 </div>
 </template>
 
@@ -48,7 +52,8 @@ export default {
       displayMessage: {
         message: 'COMPLETE!!',
         endFlag: false,
-      }
+      },
+      title: 'MemoryWeakness',
     };
   },
   methods: {
@@ -164,7 +169,6 @@ export default {
 
 <style scoped>
   .main {
-    /* background-image: url("https://picsum.photos/1440/612"); */
     background: black;
     position: relative;
   }
@@ -183,6 +187,9 @@ export default {
     position: absolute;
     top: 12em;
     left: 9.1em;
+  }
+  .title {
+    font-size: 1em;
   }
 
   @media screen and (min-width: 400px) {
@@ -238,6 +245,18 @@ export default {
       position: absolute;
       top: 12em;
       left: 32.5em;
+    }
+    .message {
+      position: absolute;
+      top: 12em;
+      left: 26.45em;
+    }
+  }
+  @media screen and (min-width: 1400px) {
+    .startBtn {
+      position: absolute;
+      top: 12em;
+      left: 34.6em;
     }
     .message {
       position: absolute;
