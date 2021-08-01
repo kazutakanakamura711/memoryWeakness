@@ -1,6 +1,6 @@
 <template>
   <div>
-    TIME　{{ time }}
+    {{ time }}
   </div>
 </template>
 
@@ -14,6 +14,7 @@ export default {
 
 <style scoped>
 div {
+  text-align: center;
   letter-spacing: 0.4em;
   font-size: .7em;
   color: rgb(93, 252, 191);

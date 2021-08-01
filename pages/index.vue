@@ -16,11 +16,19 @@
       :showStartBtn="showStartBtn"
       class="startBtn"
     />
-    <Record
-      :time="time.start"
-      class="record"
-    />
   </div>
+  <Time
+    :name="name"
+  />
+  <Record
+    :time="time.start"
+    class="record"
+  />
+  <ReloadBtn
+    :endFlag="displayMessage.endFlag"
+    :nameReload="nameReload"
+    @reload="reload"
+  />
   <Title
     :title="title"
     class="title"
@@ -54,6 +62,8 @@ export default {
         endFlag: false,
       },
       title: 'MemoryWeakness',
+      name: 'TIME',
+      nameReload: 'RELOAD',
     };
   },
   methods: {
@@ -141,6 +151,9 @@ export default {
         this.displayMessage.endFlag = true
       }
     },
+    reload() {
+      location.reload()
+    },
   },
   mounted() {
     for (let i = 1; i <= 13; i++) {
@@ -191,6 +204,7 @@ export default {
   .title {
     font-size: 0.9em;
   }
+  
 
   @media screen and (min-width: 400px) {
     .startBtn {
@@ -261,7 +275,7 @@ export default {
     .message {
       position: absolute;
       top: 12em;
-      left: 26.45em;
+      left: 28.55em;
     }
   }
 
