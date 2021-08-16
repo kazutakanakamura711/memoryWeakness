@@ -110,6 +110,7 @@ export default {
       if (this.openCards.count == 0 || 1) {
         this.openCards.count++
         this.cardsArr[index]['isOpen'] = true
+        this.openSE()
         if (this.cardsArr[index]['mark'] == '♦') {
           this.cardsArr[index]['isRed'] = true
         }
@@ -126,10 +127,11 @@ export default {
           setTimeout(() => {
             this.openCards.cards[0]['isDel'] = true
             this.openCards.cards[1]['isDel'] = true
+            this.okSE()
             this.delCardsArr.push(this.openCards[0])
             this.delCardsArr.push(this.openCards[1])
             this.endCheck()
-          },300)
+          },500)
         }
         setTimeout(() => {
           this.openCards.cards[0]['isDisabled'] = false
@@ -149,11 +151,36 @@ export default {
       if (this.delCardsArr.length == this.cardsArr.length) {
         clearInterval(this.time.clearId)
         this.displayMessage.endFlag = true
+        this.cardEndSE()
       }
     },
     reload() {
       location.reload()
     },
+    okSE() {
+      const okSE = new Audio()
+      okSE.preload = "auto"
+      okSE.src = "music/okSE.mp3"
+      okSE.load()
+      okSE.volume = 0.1
+      okSE.play()
+    },
+    openSE() {
+      const openSE = new Audio()
+      openSE.preload = "auto"
+      openSE.src = "music/cardOpenSE.mp3"
+      openSE.load()
+      openSE.volume = 0.1
+      openSE.play()
+    },
+    cardEndSE() {
+      const endSE = new Audio()
+      endSE.preload = "auto"
+      endSE.src = "music/cardEndSE.mp3"
+      endSE.load()
+      endSE.volume = 0.1
+      endSE.play()
+    }
   },
   mounted() {
     for (let i = 1; i <= 13; i++) {
@@ -193,12 +220,12 @@ export default {
   }
   .startBtn {
     position: absolute;
-    top: 12em;
+    top: 20%;
     left: 11.8em;
   }
   .message {
     position: absolute;
-    top: 12em;
+    top: 20%;
     left: 9.1em;
   }
   .title {
@@ -209,72 +236,72 @@ export default {
   @media screen and (min-width: 400px) {
     .startBtn {
       position: absolute;
-      top: 12em;
+      top: 20%;
       left: 13.4em;
     }
     .message {
       position: absolute;
-      top: 12em;
+      top: 20%;
       left: 10.93em;
     }
   }
   @media screen and (min-width: 481px) {
     .startBtn {
       position: absolute;
-      top: 12em;
+      top: 20%;
       left: 32.5em;
     }
     .message {
       position: absolute;
-      top: 12em;
+      top: 20%;
       left: 26.5em;
     }
   }
   @media screen and (min-width: 750px) {
     .startBtn {
       position: absolute;
-      top: 12em;
+      top: 20%;
       left: 15.2em;
     }
     .message {
       position: absolute;
-      top: 12em;
+      top: 20%;
       left: 9.2em;
     }
   }
   @media screen and (min-width: 1000px) {
     .startBtn {
       position: absolute;
-      top: 12em;
+      top: 20%;
       left: 22.6em;
     }
     .message {
       position: absolute;
-      top: 12em;
+      top: 20%;
       left: 16.8em;
     }
   }
   @media screen and (min-width: 1300px) {
     .startBtn {
       position: absolute;
-      top: 12em;
+      top: 20%;
       left: 32.5em;
     }
     .message {
       position: absolute;
-      top: 12em;
+      top: 20%;
       left: 26.45em;
     }
   }
   @media screen and (min-width: 1400px) {
     .startBtn {
       position: absolute;
-      top: 12em;
+      top: 20%;
       left: 34.6em;
     }
     .message {
       position: absolute;
-      top: 12em;
+      top: 20%;
       left: 28.55em;
     }
   }
