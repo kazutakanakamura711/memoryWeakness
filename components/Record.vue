@@ -13,6 +13,7 @@ export default {
 </script>
 
 <style scoped>
+
 div {
   text-align: center;
   letter-spacing: 0.4em;
