@@ -11,6 +11,7 @@ export default {
 </script>
 
 <style scoped>
+
   p {
     text-align: center;
     letter-spacing: 1em;
