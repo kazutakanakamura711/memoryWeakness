@@ -208,7 +208,6 @@ export default {
 </script>
 
 <style scoped>
-
   .main {
     background: black;
     position: relative;
